@@ -2,21 +2,22 @@
     --main-bg-color: white;
 }
   
-body{
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-color: rgb(174, 238, 250);
-   
 }
-#container{
+
+#container {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#barChart{
+
+#barChart {
     width: 900px;
     height: 600px;
     display: flex;
@@ -27,9 +28,20 @@ body{
     box-shadow: 0 2px 12px 6px rgb(37, 37, 37);
 }
 
-#chart{
-    background-color: var(--main-bg-color);
-    width: 800px;
-    height: 500px;
-    
+.info {
+    fill: rgb(0, 0, 0);
+    font: 1em sans-serif;
+}
+
+.bar:hover {
+    fill:white;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: rgb(194, 194, 194);
+    color: black;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 4px 2px rgb(0, 0, 0);
+    width: 130px;
 }
