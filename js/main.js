@@ -52,8 +52,6 @@ d3.json(datasetURL).then(res =>{
         })
         .attr("class", "bar")
         .attr("fill", "rgb(59, 151, 255)")
-        // .append("title")
-        // .text((d) => '$' + d[1].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' Billion - '+ d[0])
         .on('mouseover', function(d, i) {
             tooltip.html(d[0] + '<br>' + '$' + d[1].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' Billion')
             .style("opacity", 0.9)
@@ -65,34 +63,6 @@ d3.json(datasetURL).then(res =>{
         .on('mouseout', function(d, i) {
             tooltip.style("opacity", 0);
         });
-    
-       
-
-
-        // .on('mouseover', function(d, i) {
-        // //    console.log(d[1].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' Billion')
-        //    //divTooltip.html(d[0] + '<br>' + '$' + d[1].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' Billion');
-        //    const rect = d3.select("#rect"+ i)
-        //     console.log(rect)
-        //     rect.attr("fill","red")
-        //     rect.attr("x", d => {
-        //         return xScale(new Date(d[0])) 
-        //     })
-        //     .attr("y", d => {
-        //         return yScale(d[1])
-        //     })
-        //     rect.attr("transform","translate(100, 100) rotate(45 60 60)")
-        //     // rect.attr("transform","rotate(90 460,200)")
-        // //    .html(d[0] + '<br>' + '$' + d[1].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' Billion');
-
-        // })
-        // .on('mouseout', function(d, i) {
-        //     const rect = d3.select("#rect"+ i)
-        //     console.log(rect)
-        //     // rect.attr("transform","rotate(0 0,0)")
-        //     rect.attr("fill","rgb(59, 151, 255)")
-        //  });
-
         
     // Create Axis
     const xAxis = d3.axisBottom(xScale);
