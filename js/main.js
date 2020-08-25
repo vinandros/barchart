@@ -5,9 +5,9 @@ d3.json(datasetURL).then(res =>{
     const width = 800;
     const height = 400;
     const padding ={
-        left:40,
-        bottom:40,
-        right:10,
+        left:20,
+        bottom:30,
+        right:0,
         top:30
     };
     const barWidth = width/275;
@@ -57,8 +57,8 @@ d3.json(datasetURL).then(res =>{
             .style("opacity", 0.9)
             .style("transition", "opacity 1s")
             .attr('data-date', d[0])
-            .style("top", yScale(d[1]) + 100 +"px")
-            .style("left", xScale(new Date(d[0]))+15+"px");
+            .style("top", yScale(d[1])-515+"px")
+            .style("left",xScale(new Date(d[0]))- 480+ "px");
         })
         .on('mouseout', function(d, i) {
             tooltip.style("opacity", 0);
@@ -80,7 +80,7 @@ d3.json(datasetURL).then(res =>{
         .call(yAxis)
 
     svg.append('text')
-        .attr('x', width/2 - 30)
+        .attr('x', width/2 - 40)
         .attr('y', height + padding.bottom)
         .text('More Information: http://www.bea.gov/national/pdf/nipaguid.pdf')
         .attr('class', 'info');
